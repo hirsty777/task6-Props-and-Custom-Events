@@ -1,6 +1,8 @@
 <template>
-    <input type="text" :value="inputUserName" @input="nameChange">
-    <input type="text" :value="inputUserAge" @input="ageChange"> 
+    <div class="userDataClass">
+        <input class="input1" type="text" :value="inputUserName" @input="nameChange">
+        <input class="input2" type="text" :value="inputUserAge" @input="ageChange"> 
+    </div>
 </template>
 
 
@@ -9,10 +11,14 @@
 
 <script>
 export default {
+    emits:[
+        'name-emit',
+        'age-emit'
+    ],
     data(){
         return{
-            inputUserName:'name',
-            inputUserAge:'age',
+            inputUserName:'',
+            inputUserAge:'',
         }
     },
     methods:{
